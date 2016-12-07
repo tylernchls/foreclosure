@@ -11,11 +11,16 @@ function loan(){
   borrowed: 550000,
   balance: 286000,
   monthlyPayment: 1700,
-  defaulted: 5,
+  defaulted: 0,
+  defaultsToForeclose: 5,
   foreclosed: false
-},
+}
 
 function missPayment(){
+  account.defaulted+=1;
+  if(account.defaulted >= account.defaultsToForeclose){
+    account.foreclosed === true;
+  }
 
 }
 }
